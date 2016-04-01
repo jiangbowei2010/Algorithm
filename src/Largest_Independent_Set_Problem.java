@@ -1,3 +1,10 @@
+/*
+ * from http://www.geeksforgeeks.org/largest-independent-set-problem/ Given a
+ * Binary Tree, find size of the Largest Independent Set(LIS) in it. A subset of
+ * all tree nodes is an independent set if there is no edge between any two
+ * nodes of the subset.
+ */
+
 class TreeNode {
 	int val;
 	TreeNode left, right;
@@ -6,6 +13,7 @@ class TreeNode {
 		this.val = val;
 	}
 }
+
 
 public class Largest_Independent_Set_Problem {
 
