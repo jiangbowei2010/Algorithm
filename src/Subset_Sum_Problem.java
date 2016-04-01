@@ -29,7 +29,7 @@ public class Subset_Sum_Problem {
 		int sum = 9;
 		System.out.println(solution.existSum(nums, sum));
 
-		sum = 1;
+		sum = 0;
 		System.out.println(solution.existSum(nums, sum));
 	}
 }
