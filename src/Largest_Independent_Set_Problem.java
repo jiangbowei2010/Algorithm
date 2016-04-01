@@ -5,16 +5,6 @@
  * nodes of the subset.
  */
 
-class TreeNode {
-	int val;
-	TreeNode left, right;
-
-	public TreeNode(int val) {
-		this.val = val;
-	}
-}
-
-
 public class Largest_Independent_Set_Problem {
 
 	public int largestSet(TreeNode root) {
