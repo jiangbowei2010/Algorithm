@@ -51,10 +51,12 @@ public class Boolean_Parenthesization_Problem {
 		}
 		return numTrue[0][n - 1];
 	}
-	
+
 	public static void main(String[] args) {
 		char[] symbol = "TTFT".toCharArray();
 		char[] operator = "|&^".toCharArray();
+		// There are 4 ways
+		// ((T|T)&(F^T)), (T|(T&(F^T))), (((T|T)&F)^T) and (T|((T&F)^T))
 		Boolean_Parenthesization_Problem solution = new Boolean_Parenthesization_Problem();
 		System.out.println(solution.numParentheis(symbol, operator));
 	}
