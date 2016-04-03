@@ -10,7 +10,7 @@
 import java.util.*;
 
 public class Verify_Preorder_Sequence_in_BST {
-	// method 1 use tree preorder traversal
+	// method 1 use tree pre-order traversal
 	public boolean verifyPreorder1(int[] preorder) {
 		if (preorder == null || preorder.length == 0)
 			return true;

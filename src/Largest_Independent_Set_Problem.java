@@ -26,9 +26,8 @@ public class Largest_Independent_Set_Problem {
 
 	public static void main(String[] args) {
 		Largest_Independent_Set_Problem solution = new Largest_Independent_Set_Problem();
-		TreeNode root = new TreeNode(0);
-		root.left = new TreeNode(1);
-		root.right = new TreeNode(2);
+		Serialize_and_Deserialize_Binary_Tree treeBuilding = new Serialize_and_Deserialize_Binary_Tree();
+		TreeNode root = treeBuilding.deserializeBFS("1 2 3 # 4 # # 5 # # #");
 		System.out.println(solution.largestSet(root));
 	}
 }
