@@ -16,6 +16,7 @@
  */
 import java.util.*;
 
+
 public class Print_Nodes_in_Top_View_of_Binary_Tree {
 	private class ListNode {
 		private int val;
@@ -31,7 +32,30 @@ public class Print_Nodes_in_Top_View_of_Binary_Tree {
 		if (root == null)
 			return res;
 		ListNode node = new ListNode(root.val);
-		dfs(root, node);
+		Queue<TreeNode> q1 = new LinkedList<>();
+		Queue<ListNode> q2 = new LinkedList<>();
+		q1.offer(root);
+		q2.offer(node);
+		while (!q1.isEmpty()) {
+			TreeNode x = q1.poll();
+			ListNode y = q2.poll();
+			if (x.left != null) {
+				if (y.pre == null) {
+					y.pre = new ListNode(x.left.val);
+					y.pre.next = y;
+				}
+				q1.offer(x.left);
+				q2.offer(y.pre);
+			}
+			if (x.right != null) {
+				if (y.next == null) {
+					y.next = new ListNode(x.right.val);
+					y.next.pre = y;
+				}
+				q1.offer(x.right);
+				q2.offer(y.next);
+			}
+		}
 		while (node.pre != null)
 			node = node.pre;
 		while (node != null) {
@@ -41,24 +65,7 @@ public class Print_Nodes_in_Top_View_of_Binary_Tree {
 		return res;
 	}
 
-	private void dfs(TreeNode x, ListNode y) {
-		if (x.left != null) {
-			if (y.pre == null) {
-				y.pre = new ListNode(x.left.val);
-				y.pre.next = y;
-			}
-			dfs(x.left, y.pre);
-		}
-		if (x.right != null) {
-			if (y.next == null) {
-				y.next = new ListNode(x.right.val);
-				y.next.pre = y;
-			}
-			dfs(x.right, y.next);
-		}
-	}
-
-	public static void main() {
+	public static void main(String[] args) {
 		Print_Nodes_in_Top_View_of_Binary_Tree solution = new Print_Nodes_in_Top_View_of_Binary_Tree();
 		Serialize_and_Deserialize_Binary_Tree treeBuild = new Serialize_and_Deserialize_Binary_Tree();
 		TreeNode root = treeBuild.deserializeBFS("1 2 3 4 5 6 7");
