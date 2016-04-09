@@ -82,10 +82,6 @@ public class Solving_Cryptarithmetic_Puzzles {
 		Map<Character, Integer> map = solution.solvePuzzle("SEND", "MORE", "MONEY");
 		for (char c : map.keySet()) {
 			System.out.println("" + c + ": " + String.valueOf(map.get(c))); // 9567
-																			// +
-																			// 1085
-																			// =
-																			// 10652
 		}
 	}
 }
