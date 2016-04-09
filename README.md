@@ -1,7 +1,8 @@
 # Algorithm
 
-Question_List.xlsx  	is the summary of question list
-/src Solutions to 	solution to the questions, written in Java
+[Question_List.xlsx]  	is the summary of question list
+
+[./src]  	solution to the questions, written in Java
 
 
 Old Leetcode solution to first 300 question
