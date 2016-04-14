@@ -36,7 +36,9 @@ public class Sliding_Window_Maximum {
 		Sliding_Window_Maximum solution = new Sliding_Window_Maximum();
 		int[] nums = { 1, 3, -1, -3, 5, 3, 6, 7 };
 		int[] res = solution.maxSlidingWindow(nums, 3);
-		for (int num : res)
-			System.out.println(num); // 3 3 5 5 6 7
+		for (int num : res) {
+			System.out.print(num); // 3 3 5 5 6 7
+			System.out.print(" ");
+		}
 	}
 }
