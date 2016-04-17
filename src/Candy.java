@@ -10,8 +10,8 @@
  * more candies than their neighbors. What is the minimum candies you must give?
  */
 public class Candy {
-	
-	//Method 1: 3 iteration, O(n) time and O(n) complexity
+
+	// Method 1: 3 iteration, O(n) time and O(n) complexity
 	public int candy(int[] ratings) {
 		if (ratings == null || ratings.length == 0)
 			return 0;
@@ -32,10 +32,38 @@ public class Candy {
 			res += candy[i];
 		return res;
 	}
-	
+
+	// Method 2, one iteration O(n) time, O(1) space
+	public int candyII(int[] ratings) {
+		if (ratings == null || ratings.length == 0)
+			return 0;
+		int h = 1, index = 0, res = 1, curr = 1;
+		for (int i = 1; i < ratings.length; i++) {
+			if (ratings[i] > ratings[i - 1]) {
+				h = ++curr;
+				res += curr;
+				index = i;
+			} else if (ratings[i] == ratings[i - 1]) {
+				curr = 1;
+				res += curr;
+				h = 1;
+				index = i;
+			} else {
+				curr = 1;
+				res += i - index;
+				if (h == i - index) {
+					h++;
+					res++;
+				}
+			}
+		}
+		return res;
+	}
+
 	public static void main(String[] args) {
-		int[] ratings = {1, 2, 3, 3, 3};
+		int[] ratings = { 1, 2, 3, 3, 3 };
 		Candy solution = new Candy();
 		System.out.println(solution.candy(ratings));
+		System.out.println(solution.candyII(ratings));
 	}
 }
