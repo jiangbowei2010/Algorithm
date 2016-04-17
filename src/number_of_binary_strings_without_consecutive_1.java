@@ -7,7 +7,7 @@
  * Input: N = 3 Output: 5 // The 5 strings are 000, 001, 010, 100, 101
  */
 
-public class number_of_binary_strings_without_consecutive_1 {
+public class Number_of_binary_strings_without_consecutive_1 {
 	public int numBinaryString(int n) {
 		if (n <= 0)
 			return 0;
@@ -21,7 +21,7 @@ public class number_of_binary_strings_without_consecutive_1 {
 	}
 
 	public static void main(String[] args) {
-		number_of_binary_strings_without_consecutive_1 solution = new number_of_binary_strings_without_consecutive_1();
+		Number_of_binary_strings_without_consecutive_1 solution = new Number_of_binary_strings_without_consecutive_1();
 		System.out.println(solution.numBinaryString(2));
 		System.out.println(solution.numBinaryString(3));
 	}
